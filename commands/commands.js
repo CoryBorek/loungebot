@@ -1,0 +1,21 @@
+module.exports = {
+    botinfocommand: require("./botinfo"),
+    clearmsgcommand: require("./clearmsg"),
+    kickcommand: require("./kick"),
+    mutecommand: require("./mute"),
+    reportcommand: require("./report"),
+    announcecommand: require("./announce"),
+    bancommand: require("./ban"),
+    helpcommand: require("./help"),
+    warncommand: require("./warn"),
+    shipcommand: require("./ship"),
+    changeprefix: require("./changeprefix"),
+    autoresponse: require("./autoresponse"),
+    cat: require("./cat"),
+    dog: require("./dog"),
+    president: require("./president"),
+    staffhelp: require("./staffhelp"),
+    truthordare: require("./truthordare"),
+    changejoinmsg: require("./changejoinmsg"),
+    levelcommand: require("../listeners/levelcheck")
+};

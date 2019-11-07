@@ -1,0 +1,15 @@
+Message from <@377989938680954902>(Jishy) has been deleted.
+
+Message Content:
+```js
+setInterval(function () {
+    bot.user.setActivity(status, {
+        type: "WATCHING"
+    });
+}, 10000)```
+
+Channel:
+#testing
+
+Date & Time:
+11-7-2019 @ 13:47:1
