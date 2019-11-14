@@ -5,7 +5,9 @@ exports.tord = async (bot, msg, Discord, red, green, blue, config, command, args
         .setDescription("*Are you sure you would like to start a game of Truth Or Dare? Type: `confirm` to confirm, or: `quit` to quit.*");
     msg.channel.send(confirmEmbed);
 
-    const collector = new Discord.MessageCollector(msg.channel, m => m.author.id === msg.author.id, { time: 10000 });
+    const collector = new Discord.MessageCollector(msg.channel, m => m.author.id === msg.author.id, {
+        time: 10000
+    });
     let host = msg.author.id;
 
     collector.on('collect', msg => {
@@ -19,11 +21,12 @@ exports.tord = async (bot, msg, Discord, red, green, blue, config, command, args
             const fs = require('fs');
 
             if (!fs.existsSync('./truthordare')) {
-                fs.mkdirSync('./truthordare'), function (err) {
-                    if (err) {
-                        return console.log(err);
-                    }
-                };
+                fs.mkdirSync('./truthordare'),
+                    function (err) {
+                        if (err) {
+                            return console.log(err);
+                        }
+                    };
             };
             gameTord = {
                 Channel: (msg.channel.id),

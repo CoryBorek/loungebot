@@ -144,8 +144,10 @@ function emoji(id) {
 
 // When a new user joins the server
 bot.on("guildMemberAdd", member => {
-    const joinMSG = require('./joinmsg');
-    joinMSG.join(member, welcome, config);
+    if (member != bot) {
+        const joinMSG = require('./joinmsg');
+        joinMSG.join(member, welcome, config);
+    }
 });
 
 bot.on('message', async msg => {
@@ -347,6 +349,16 @@ bot.on('message', async msg => {
     // Chnage join message
     if (command === "joinmsg") {
         commands.changejoinmsg.chjoin(msg, config, args, Discord, staffRole, red, green, welcome);
+    }
+
+    // Restart bot
+    if (command === "restart") {
+        commands.restart.restart(bot, Discord, msg, staffRole, navy, green, red, config);
+    }
+
+    // Survival server info
+    if (command === "survival") {
+        commands.survival.survival(Discord, msg, blue);
     }
 });
 

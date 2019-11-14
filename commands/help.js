@@ -38,6 +38,10 @@ exports.help = function (bot, msg, args, config) {
                 {
                     name: "- " + (config.prefix) + "dog",
                     value: "`Sends a random picture of a dog`"
+                },
+                {
+                    name: "- " + (config.prefix) + "survival",
+                    value: "`View Survival Server information`"
                 }
             ],
             footer: {

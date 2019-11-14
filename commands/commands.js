@@ -17,5 +17,7 @@ module.exports = {
     staffhelp: require("./staffhelp"),
     truthordare: require("./truthordare"),
     changejoinmsg: require("./changejoinmsg"),
-    levelcommand: require("../listeners/levelcheck")
+    levelcommand: require("../listeners/levelcheck"),
+    restart: require("./restart"),
+    survival: require("./survival")
 };
