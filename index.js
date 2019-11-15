@@ -357,6 +357,11 @@ bot.on('message', async msg => {
     if (command === "survival") {
         commands.survival.survival(Discord, msg, blue);
     }
+
+    // View future updates/features
+    if (command === "updates") {
+        commands.updates.updates(bot, Discord, msg, blue);
+    }
 });
 
 //

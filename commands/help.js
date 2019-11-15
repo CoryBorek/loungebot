@@ -42,6 +42,10 @@ exports.help = function (bot, msg, args, config) {
                 {
                     name: "- " + (config.prefix) + "survival",
                     value: "`View Survival Server information`"
+                },
+                {
+                    name: "- " + (config.prefix) + "updates",
+                    value: "`View some of the features and updates that are being looked into/worked on!`"
                 }
             ],
             footer: {

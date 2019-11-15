@@ -19,5 +19,6 @@ module.exports = {
     changejoinmsg: require("./changejoinmsg"),
     levelcommand: require("../listeners/levelcheck"),
     restart: require("./restart"),
-    survival: require("./survival")
+    survival: require("./survival"),
+    updates: require("./updates")
 };
