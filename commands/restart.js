@@ -27,7 +27,14 @@ exports.restart = async (bot, Discord, msg, navy, green, red, config) => {
                     .setTitle("Restarting bot")
                     .setDescription("Bot is now restarting... " + bot.emojis.get("644345141183643664"));
 
-                msg.channel.send(restarting)
+                msg.channel.send(restarting);
+
+                const logRestart = new Discord.RichEmbed()
+                    .setColor(red)
+                    .setAuthor(msg.author.username, msg.author.avatarURL)
+                    .setTitle("Bot restarted")
+                    .setDescription(msg.author.username + " is restarting the bot.");
+                bot.channels.get(config.logsChannel).send(logRestart)
                     .then(bot.destroy())
                     .then(bot.login(config.token));
 
@@ -37,6 +44,7 @@ exports.restart = async (bot, Discord, msg, navy, green, red, config) => {
                         .setTitle("Success!")
                         .setDescription("Bot has successfully restarted!");
                     msg.channel.send(success);
+                    bot.channels.get(config.logsChannel).send(success);
                 });
             }
         });
