@@ -36,8 +36,7 @@ exports.restart = async (bot, Discord, msg, navy, green, red, config) => {
                         .setColor(green)
                         .setTitle("Success!")
                         .setDescription("Bot has successfully restarted!");
-                    msg.channel.send(success)
-                        .then(fs.unlinkSync("./tempID.json"));
+                    msg.channel.send(success);
                 });
             }
         });
