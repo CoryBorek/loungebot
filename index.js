@@ -343,6 +343,11 @@ bot.on('message', async msg => {
         msg.reply("That command is not available yet, sorry!");
     }
 
+    // Tic Tac Toe
+    if (command === "tictactoe") {
+        msg.reply("That command is not available yet, sorry!");
+    }
+
     // Chnage join message
     if (command === "joinmsg") {
         commands.changejoinmsg.chjoin(msg, config, args, Discord, red, green, welcome);

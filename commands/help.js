@@ -46,6 +46,14 @@ exports.help = function (bot, msg, args, config) {
                 {
                     name: "- " + (config.prefix) + "updates",
                     value: "`View some of the features and updates that are being looked into/worked on!`"
+                },
+                {
+                    name: "- " + (config.prefix) + "tord",
+                    value: "`Play Truth Or Dare! (Coming Soon)`"
+                },
+                {
+                    name: "- " + (config.prefix) + "tictactoe",
+                    value: "`Play Tic Tac Toe! (Coming Soon)`"
                 }
             ],
             footer: {
