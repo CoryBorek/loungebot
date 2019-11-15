@@ -6,8 +6,8 @@ var today = new Date();
 var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-exports.clearmsg = function (msg, args, bot, logCH, staffRole) {
-    if (!msg.member.roles.find(r => r.name === "◈TEAM MEMBERS")) {
+exports.clearmsg = function (msg, args, bot, logCH, config) {
+    if (!msg.member.roles.has(config.staffrole)) {
         msg.channel.send({
             embed: {
                 color: red,

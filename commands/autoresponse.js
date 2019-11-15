@@ -1,8 +1,8 @@
-exports.autoresponse = function (msg, args, Discord, green, red, staffRole, darkgold, config) {
+exports.autoresponse = function (msg, args, Discord, green, red, darkgold, config) {
     var fs = require('fs');
     const autoRespond = require("../autorespond");
 
-    if (!msg.member.roles.has(staffRole.id)) {
+    if (!msg.member.roles.has(config.staffrole)) {
         msg.channel.send({
             embed: {
                 color: red,

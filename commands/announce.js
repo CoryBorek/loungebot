@@ -2,7 +2,7 @@ const red = 15158332
 const green = 3066993
 const purple = 10181046
 
-exports.announce = function (bot, msg, args, announceCH, logCH, staffRole, config) {
+exports.announce = function (bot, msg, args, announceCH, logCH, config) {
 
     const announceMSG = args.slice(2).join(' ');
     const announceType = (args[0]);
@@ -14,7 +14,7 @@ exports.announce = function (bot, msg, args, announceCH, logCH, staffRole, confi
     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-    if (!msg.member.roles.has(staffRole.id)) {
+    if (!msg.member.roles.has(config.staffrole)) {
         msg.channel.send({
             embed: {
                 color: red,

@@ -1,9 +1,9 @@
-exports.warn = function (bot, msg, staffRole, red, green, user, config, args, date, time, timeLogs, logCH) {
+exports.warn = function (bot, msg, red, green, user, config, args, date, time, timeLogs, logCH) {
     var fs = require('fs');
     args.slice(2).join(' ');
     const reason = args.slice(1).join(' ');
 
-    if (!msg.member.roles.has(staffRole.id)) {
+    if (!msg.member.roles.has(config.staffrole)) {
         msg.channel.send({
             embed: {
                 color: red,

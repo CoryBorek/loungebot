@@ -2,7 +2,7 @@ const blue = 3447003
 const red = 15158332
 
 
-exports.kick = function (msg, user, reason, bot, logCH, date, time, timeLogs, staffRole) {
+exports.kick = function (msg, user, reason, bot, logCH, date, time, timeLogs, config) {
 
     var fs = require('fs');
 
@@ -12,7 +12,7 @@ exports.kick = function (msg, user, reason, bot, logCH, date, time, timeLogs, st
     //    var totalFiles = files.length;
     //})
 
-    if (!msg.member.roles.has(staffRole.id)) {
+    if (!msg.member.roles.has(config.staffrole)) {
         msg.channel.send({
             embed: {
                 color: red,

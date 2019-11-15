@@ -1,5 +1,5 @@
-exports.staffhelp = async (msg, Discord, config, blue, red, staffRole) => {
-    if (!msg.member.roles.has(staffRole.id)) {
+exports.staffhelp = async (msg, Discord, config, blue, red) => {
+    if (!msg.member.roles.has(config.staffrole)) {
         msg.channel.send({
             embed: {
                 color: red,

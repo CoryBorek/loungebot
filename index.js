@@ -252,9 +252,6 @@ bot.on('message', async msg => {
 
     const reason = args.slice(2).join(' ');
 
-    // Staff Role
-    let staffRole = msg.guild.roles.get("name", "◈TEAM MEMBERS");
-
     // Botinfo command
     if (command === "botinfo") {
         commands.botinfocommand.botinfo(msg, args, version, config);
@@ -267,17 +264,17 @@ bot.on('message', async msg => {
 
     // Clear messages command
     if (command === "purge") {
-        commands.clearmsgcommand.clearmsg(msg, args, bot, logCH, staffRole);
+        commands.clearmsgcommand.clearmsg(msg, args, bot, logCH, config);
     };
 
     // Kick command
     if (command === "kick") {
-        commands.kickcommand.kick(msg, user, reason, bot, logCH, date, time, timeLogs, staffRole);
+        commands.kickcommand.kick(msg, user, reason, bot, logCH, date, time, timeLogs, config);
     };
 
     // Ban command
     if (command === "ban") {
-        commands.bancommand.ban(bot, msg, user, logCH, reason, timeLogs, staffRole, config);
+        commands.bancommand.ban(bot, msg, user, logCH, reason, timeLogs, config);
     };
 
     // Report command
@@ -287,7 +284,7 @@ bot.on('message', async msg => {
 
     // Announcement command
     if (command === "announce") {
-        commands.announcecommand.announce(bot, msg, args, announceCH, logCH, staffRole, config);
+        commands.announcecommand.announce(bot, msg, args, announceCH, logCH, config);
     };
 
     // Help command
@@ -297,7 +294,7 @@ bot.on('message', async msg => {
 
     // Warn command
     if (command === "warn") {
-        commands.warncommand.warn(bot, msg, staffRole, red, green, user, config, args, date, time, timeLogs, logCH);
+        commands.warncommand.warn(bot, msg, red, green, user, config, args, date, time, timeLogs, logCH);
     };
 
     // Ship command
@@ -312,12 +309,12 @@ bot.on('message', async msg => {
 
     // Edit bot command prefix
     if (command === "changeprefix") {
-        commands.changeprefix.changeprefix(msg, args, Discord, green, red, config, staffRole);
+        commands.changeprefix.changeprefix(msg, args, Discord, green, red, config);
     };
 
     // Autoresponse command
     if (command === "autoresponse") {
-        commands.autoresponse.autoresponse(msg, args, Discord, green, red, staffRole, darkgold, autoRespond, config);
+        commands.autoresponse.autoresponse(msg, args, Discord, green, red, darkgold, autoRespond, config);
     };
 
     // Random cat image command
@@ -337,7 +334,7 @@ bot.on('message', async msg => {
 
     // Staff help command
     if (command === "staffhelp") {
-        commands.staffhelp.staffhelp(msg, Discord, config, blue, red, staffRole);
+        commands.staffhelp.staffhelp(msg, Discord, config, blue, red);
     }
 
     // Truth or dare command
@@ -348,12 +345,12 @@ bot.on('message', async msg => {
 
     // Chnage join message
     if (command === "joinmsg") {
-        commands.changejoinmsg.chjoin(msg, config, args, Discord, staffRole, red, green, welcome);
+        commands.changejoinmsg.chjoin(msg, config, args, Discord, red, green, welcome);
     }
 
     // Restart bot
     if (command === "restart") {
-        commands.restart.restart(bot, Discord, msg, staffRole, navy, green, red, config);
+        commands.restart.restart(bot, Discord, msg, navy, green, red, config);
     }
 
     // Survival server info

@@ -1,7 +1,7 @@
-exports.chjoin = async (msg, config, args, Discord, staffRole, red, green, welcome) => {
+exports.chjoin = async (msg, config, args, Discord, red, green, welcome) => {
     var fs = require('fs');
 
-    if (!msg.member.roles.has(staffRole.id)) {
+    if (!msg.member.roles.has(config.staffrole)) {
         msg.channel.send({
             embed: {
                 color: red,

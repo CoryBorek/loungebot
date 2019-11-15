@@ -3,13 +3,13 @@ const red = 15158332
 
 var fs = require('fs');
 
-exports.ban = async function (bot, msg, user, logCH, reason, timeLogs, staffRole, config) {
+exports.ban = async function (bot, msg, user, logCH, reason, timeLogs, config) {
 
     var today = new Date();
     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-    if (!msg.member.roles.has(staffRole.id)) {
+    if (!msg.member.roles.has(config.staffrole)) {
         msg.channel.send({
             embed: {
                 color: red,

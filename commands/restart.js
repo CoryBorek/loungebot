@@ -1,5 +1,5 @@
-exports.restart = async (bot, Discord, msg, staffRole, navy, green, red, config) => {
-    if (!msg.member.roles.has(staffRole.id)) {
+exports.restart = async (bot, Discord, msg, navy, green, red, config) => {
+    if (!msg.member.roles.has(config.staffrole)) {
         msg.channel.send({
             embed: {
                 color: red,
@@ -27,26 +27,16 @@ exports.restart = async (bot, Discord, msg, staffRole, navy, green, red, config)
                     .setTitle("Restarting bot")
                     .setDescription("Bot is now restarting... " + bot.emojis.get("644345141183643664"));
 
-                msg.channel.send(restarting);
-                TempID = {
-                        ID: (restarting.id)
-                    },
-                    fs.writeFile("./tempID.json", JSON.stringify(TempID), (err) => {
-                        if (err) {
-                            console.log(err);
-                        }
-                    })
+                msg.channel.send(restarting)
                     .then(bot.destroy())
                     .then(bot.login(config.token));
 
                 bot.on('ready', () => {
-                    const TempID = require("./tempID")
-
-                    TempID.TempID.edit = new Discord.RichEmbed()
+                    const success = new Discord.RichEmbed()
                         .setColor(green)
                         .setTitle("Success!")
                         .setDescription("Bot has successfully restarted!");
-                    msg.channel.send(restarted)
+                    msg.channel.send(success)
                         .then(fs.unlinkSync("./tempID.json"));
                 });
             }

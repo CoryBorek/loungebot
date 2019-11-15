@@ -1,5 +1,5 @@
-exports.changeprefix = async (msg, args, Discord, green, red, config, staffRole) => {
-    if (!msg.member.roles.has(staffRole.id)) {
+exports.changeprefix = async (msg, args, Discord, green, red, config) => {
+    if (!msg.member.roles.has(config.staffrole)) {
         msg.channel.send({
             embed: {
                 color: red,
