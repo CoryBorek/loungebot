@@ -254,7 +254,7 @@ bot.on('message', async msg => {
 
     // Botinfo command
     if (command === "botinfo") {
-        commands.botinfocommand.botinfo(msg, args, version, config);
+        commands.botinfocommand.botinfo(msg, args, version, config, bot);
     };
 
     // Mute command

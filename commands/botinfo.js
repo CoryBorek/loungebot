@@ -1,12 +1,13 @@
 const blue = 3447003
 
-exports.botinfo = function (msg, args, version, config) {
+exports.botinfo = async (msg, args, version, config, bot) => {
     switch (args[0]) {
         case 'version':
             msg.channel.send('Version ' + version);
             break
         case 'ping':
-            msg.reply(new Date().getTime() - msg.createdTimestamp + " ms");
+            const m = await msg.channel.send("Loading... " + bot.emojis.get("644345141183643664"))
+            m.edit(`${m.createdTimestamp - msg.createdTimestamp}` + " ms");
             break;
 
         case 'commands':
