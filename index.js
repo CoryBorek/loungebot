@@ -253,7 +253,7 @@ bot.on('message', async msg => {
     const reason = args.slice(2).join(' ');
 
     // Staff Role
-    let staffRole = msg.guild.roles.find("name", "Staff");
+    let staffRole = msg.guild.roles.get("name", "◈TEAM MEMBERS");
 
     // Botinfo command
     if (command === "botinfo") {
