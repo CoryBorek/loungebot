@@ -20,5 +20,6 @@ module.exports = {
     levelcommand: require("../listeners/levelcheck"),
     restart: require("./restart"),
     survival: require("./survival"),
-    updates: require("./updates")
+    updates: require("./updates"),
+    eightball: require("./eightball")
 };

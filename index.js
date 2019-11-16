@@ -23,7 +23,7 @@ const ms = require("ms");
 // Logs Channel
 const logCH = config.logsChannel;
 
-var version = '1.0.3';
+var version = '1.1.0';
 
 // Reports Channel ID
 const reportCH = config.reportsChannel;
@@ -366,6 +366,11 @@ bot.on('message', async msg => {
     // View future updates/features
     if (command === "updates") {
         commands.updates.updates(bot, Discord, msg, blue);
+    }
+
+    // Magic 8Ball
+    if (command === "8ball") {
+        commands.eightball.eightball(bot, Discord, msg, args, red, darkred);
     }
 });
 

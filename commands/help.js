@@ -48,6 +48,7 @@ exports.help = function (bot, msg, args, config, Discord) {
                 .addField("***__level__***", "`Check yours or someone else's XP info.`", true)
                 .addField("***__tord__***", "`Play Truth Or Dare! (Coming Soon)`", true)
                 .addField("***__tictactoe__***", "`Play Tic Tac Toe! (Coming Soon)`", true)
+                .addField("***__8ball__***", "`Ask the Magic 8Ball a question.`", true)
                 .setFooter("More commands comming soon!", (bot.user.avatarURL));
             msg.channel.send(gameHelp);
             break;
