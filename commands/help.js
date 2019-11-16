@@ -32,7 +32,7 @@ exports.help = function (bot, msg, args, config, Discord) {
                 .setColor(blue)
                 .setTitle("Commands Help!")
                 .setDescription("All random commands:")
-                .addField("***__ship__***", "`Put a cute heart between and someone else and combime your name UwU.`", true)
+                .addField("***__ship__***", "`Put a cute heart between you and someone else and combime your name UwU.`", true)
                 .addField("***__president__***", "`Get a random U.S. president.`", true)
                 .addField("***__dog__***", "`Get a random picture of a dog.`", true)
                 .addField("***__cat__***", "`Get a random picture of a cat.`", true)
