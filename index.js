@@ -289,7 +289,7 @@ bot.on('message', async msg => {
 
     // Help command
     if (command === "help") {
-        commands.helpcommand.help(bot, msg, args, config);
+        commands.helpcommand.help(bot, msg, args, config, Discord);
     };
 
     // Warn command
