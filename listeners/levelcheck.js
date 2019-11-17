@@ -18,7 +18,7 @@ exports.lvlcheck = function (bot, msg, args, Discord, user, xp, red) {
             .setImage(user.avatarURL)
             .addField("Current XP:", mentioncurxp, true)
             .addField("Current Level:", mentioncurlvl, true)
-            .setFooter(`${mentiondifference} XP until level ` + ((mentioncurlvl) + 1));
+            .setFooter(`${difference} XP until level ` + ((lvlRoles.levelRoles[curlvl])));
         msg.channel.send(mentionlvlEmbed);
         //let comingSoon = new Discord.RichEmbed()
         //    .setColor(red)
