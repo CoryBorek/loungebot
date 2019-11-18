@@ -250,7 +250,7 @@ bot.on('message', async msg => {
 
     const user = msg.mentions.users.first();
 
-    const reason = args.slice(2).join(' ');
+    var reason = args.slice(1).join(' ');
 
     // Botinfo command
     if (command === "botinfo") {

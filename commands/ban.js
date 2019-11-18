@@ -3,7 +3,7 @@ const red = 15158332
 
 var fs = require('fs');
 
-exports.ban = async function (bot, msg, user, logCH, reason, timeLogs, config) {
+exports.ban = async (bot, msg, user, logCH, reason, timeLogs, config) => {
 
     var today = new Date();
     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -29,7 +29,7 @@ exports.ban = async function (bot, msg, user, logCH, reason, timeLogs, config) {
                 if (err != "DiscordAPIError: cannot send message to this user")
                     console.log(err);
             });
-            user.ban(reason).then(() => {
+            msg.mentions.members.first().ban(reason).then(() => {
                 msg.channel.send({
                     embed: {
                         color: blue,
