@@ -365,7 +365,7 @@ bot.on('message', async msg => {
 
     // Magic 8Ball
     if (command === "8ball") {
-        commands.eightball.eightball(bot, Discord, msg, args, red, darkred);
+        commands.eightball.eightball(bot, Discord, msg, args, red, darkred, green, blue);
     }
 });
 
