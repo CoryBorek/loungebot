@@ -40,7 +40,6 @@ var month = (today.getMonth() + 1);
 var timeLogs = today.getHours() + "-" + today.getMinutes() + "-" + today.getSeconds();
 
 var xmasDays = 25 - (day);
-var novXmasDays = 55 - (day);
 
 bot.on('ready', () => {
     console.log('LoungeBot-2000 loaded successfully.');
@@ -48,7 +47,7 @@ bot.on('ready', () => {
 
     bot.user.setPresence({
         game: {
-            name: ((novXmasDays) + " Days until Christmas!"),
+            name: ((xmasDays) + " Days until Christmas!"),
             type: "WATCHING"
         },
         status: 'online'
@@ -108,7 +107,7 @@ bot.on('ready', () => {
         console.log('"ships" directory created.');
     };
 });
-let status = ["James -\n- " + (novXmasDays) + " Days until Christmas!", "Greys Anatomy -\n- " + (novXmasDays) + " Days until Christmas!", "HTGAWM -\n- " + (novXmasDays) + " Days until Christmas!", "Emergence -\n- " + (novXmasDays) + " Days until Christmas!", "Bot Development -\n- " + (novXmasDays) + " Days until Christmas!", "Jishy UwU -\n- " + (novXmasDays) + " Days until Christmas!", "Cute Guys -\n- " + (novXmasDays) + " Days until Christmas!", "Viola Davis -\n- " + (novXmasDays) + " Days until Christmas!", "Area 51 -\n- " + (novXmasDays) + " Days until Christmas!", "and i oop -\n- " + (novXmasDays) + " Days until Christmas!", "The world -\n- " + (novXmasDays) + " Days until Christmas!", "Minecraft Survival -\n- " + (novXmasDays) + " Days until Christmas!", "Musketqueers -\n- " + (novXmasDays) + " Days until Christmas!", "Electric Avenue -\n- " + (novXmasDays) + " Days until Christmas!", "Tom Holland -\n- " + (novXmasDays) + " Days until Christmas!", "Connor uwu -\n- " + (novXmasDays) + " Days until Christmas!", "General Chat -\n- " + (novXmasDays) + " Days until Christmas!", "*beeping noises* -\n- " + (novXmasDays) + " Days until Christmas!"]
+let status = ["James -\n- " + (xmasDays) + " Days until Christmas!", "Greys Anatomy -\n- " + (xmasDays) + " Days until Christmas!", "HTGAWM -\n- " + (xmasDays) + " Days until Christmas!", "Emergence -\n- " + (xmasDays) + " Days until Christmas!", "Bot Development -\n- " + (xmasDays) + " Days until Christmas!", "Jishy UwU -\n- " + (xmasDays) + " Days until Christmas!", "Cute Guys -\n- " + (xmasDays) + " Days until Christmas!", "Viola Davis -\n- " + (xmasDays) + " Days until Christmas!", "Area 51 -\n- " + (xmasDays) + " Days until Christmas!", "and i oop -\n- " + (xmasDays) + " Days until Christmas!", "The world -\n- " + (xmasDays) + " Days until Christmas!", "Minecraft Survival -\n- " + (xmasDays) + " Days until Christmas!", "Musketqueers -\n- " + (xmasDays) + " Days until Christmas!", "Electric Avenue -\n- " + (xmasDays) + " Days until Christmas!", "Tom Holland -\n- " + (xmasDays) + " Days until Christmas!", "Connor uwu -\n- " + (xmasDays) + " Days until Christmas!", "General Chat -\n- " + (xmasDays) + " Days until Christmas!", "*beeping noises* -\n- " + (xmasDays) + " Days until Christmas!"]
 
 setInterval(function () {
     bot.user.setActivity(status[Math.floor(Math.random() * status.length)], {
