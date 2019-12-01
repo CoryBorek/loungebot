@@ -162,10 +162,6 @@ bot.on('message', async msg => {
         msg.react("625793126224625707");
     }
 
-    if (msgLower === "ur not welcome jishy bot" || msgLower === "ur not welcome jishy bot go somewhere else") {
-        msg.reply("SHUT THE FUCK UP");
-    }
-
     if (msgLower === "drdoofenshmirtz" || msgLower === "dr doofenshmirtz") {
         msg.react("625509288730820611");
     }
