@@ -47,6 +47,7 @@ exports.kick = function (msg, user, reason, bot, logCH, date, time, timeLogs, co
                 }).catch(function (err) {
                     if (err != "DiscordAPIError: cannot send message to this user")
                         console.log(err);
+                        bot.channels.get(logCH).send(err);
                 });
 
                 bot.channels.get(logCH).send({
@@ -84,6 +85,7 @@ exports.kick = function (msg, user, reason, bot, logCH, date, time, timeLogs, co
             }).catch(err => {
                 msg.reply('`Error: Unable to kick user`');
                 console.log(err);
+                bot.channels.get(logCH).send(err);
             });
         } else {
             msg.reply('`Error: Invalid Arguments. You have not specified who you would like to kick, or the user is not in the server`');

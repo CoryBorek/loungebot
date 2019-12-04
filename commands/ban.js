@@ -3,21 +3,14 @@ const red = 15158332
 
 var fs = require('fs');
 
-exports.ban = async function (bot, msg, user, logCH, reason, timeLogs, config) {
+exports.ban = async (bot, msg, logCH, reason, timeLogs, config) => {
+    var user = msg.mentions.users.first();
 
     var today = new Date();
     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-    if (!msg.member.roles.has(config.staffrole)) {
-        msg.channel.send({
-            embed: {
-                color: red,
-                title: "Error:",
-                description: "Insufficient permissions!"
-            }
-        })
-    } else {
+    if (msg.member.roles.has(config.staffrole)) {
         if (user) {
             msg.mentions.members.first().send({
                 embed: {
@@ -28,6 +21,7 @@ exports.ban = async function (bot, msg, user, logCH, reason, timeLogs, config) {
             }).catch(function (err) {
                 if (err != "DiscordAPIError: cannot send message to this user")
                     console.log(err);
+                    bot.channels.get(logCH).send(err);
             });
             user.ban(reason).then(() => {
                 msg.channel.send({
@@ -72,25 +66,35 @@ exports.ban = async function (bot, msg, user, logCH, reason, timeLogs, config) {
                 };
                 fs.writeFile('./logs/bans/' + (user.id) + '/' + (date) + '/' + (timeLogs) + '.txt', (user) + '(' + (user.username) + ')' + '\n\nDate & Time:\n' + (date) + ' @ ' + (time) + '\n\nBanned by:\n' + (msg.author) + '(' + (msg.author.username) + ')' + '\n\nReason:\n' + (reason), function (err) {
                     if (err) {
-                        return console.log(err);
+                        return console.log(err)
+                        .then(bot.channels.get(logCH).send(err));
                     };
                 });
             }).catch(err => {
                 msg.reply('`Error: Unable to ban that user`');
                 console.log(err);
-            });
+                bot.channels.get(logCH).send(err);
+            })
         } else {
-            msg.reply({
+            msg.channel.send({
                 embed: {
                     color: red,
-                    author: {
-                        name: (msg.author.username),
-                        icon_url: (msg.author.avatarURL)
-                    },
                     title: "Error:",
-                    description: "`Invalid arguments. Please use the format" + (config.prefix) + "\"ban @user <reason>\"`"
+                    description: "Insufficient Permissions!"
                 }
-            });
+            })
         }
+    } else {
+        msg.reply({
+            embed: {
+                color: red,
+                author: {
+                    name: (msg.author.username),
+                    icon_url: (msg.author.avatarURL)
+                },
+                title: "Error:",
+                description: "`Invalid arguments. Please use the format" + (config.prefix) + "\"ban @user <reason>\"`"
+            }
+        });
     }
 }

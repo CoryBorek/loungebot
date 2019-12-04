@@ -17,7 +17,6 @@ exports.xp = async (msg, Discord, bot, xp, config) => {
 
     if (curlvl < 9) {
         let xpAdd = Math.floor(Math.random() * 7) + 8;
-        console.log(xpAdd);
 
         xp[msg.author.id].xp = curxp + xpAdd;
         if (nxtlvl <= xp[msg.author.id].xp) {
@@ -48,9 +47,10 @@ exports.xp = async (msg, Discord, bot, xp, config) => {
         fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
             if (err) {
                 console.log(err);
+                bot.channels.get(logCH).send(err);
             }
         });
 
-        console.log(`level is ${curlvl}`)
+        console.log(`${msg.author.username} has been given ${xpAdd} and is level ${curlvl}`);
     }
 }

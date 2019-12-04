@@ -57,13 +57,15 @@ exports.dmmsg = async (bot, msg, date, time, timeLogs, orange, Discord) => {
         if (!fs.existsSync('./logs/dms/' + (msg.author.id) + '/' + (date) + '/' + (timeLogs) + '.txt')) {
             fs.writeFile('./logs/dms/' + (msg.author.id) + '/' + (date) + '/' + (timeLogs) + '.txt', 'Message from ' + (`${msg.author}`) + '(' + (msg.author.username) + ') has been DMed to the bot.\n\nMessage Content:\n' + (msg.content) + '\n\nDate & Time:\n' + (date) + ' @ ' + (time), function (err) {
                 if (err) {
-                    return console.log(err);
+                    return console.log(err)
+                    .then(bot.channels.get(logCH).send(err));
                 };
             });
         } else {
             fs.writeFile('./logs/dms/' + (msg.author.id) + '/' + (date) + '/' + (timeLogs) + ' (' + ((totalFiles) + 1) + ')' + '.txt', 'Message from ' + (`${msg.author}`) + '(' + (msg.author.username) + ') has been DMed to the bot.\n\nMessage Content:\n' + (msg.content) + '\n\nDate & Time:\n' + (date) + ' @ ' + (time), function (err) {
                 if (err) {
-                    return console.log(err);
+                    return console.log(err)
+                    .then(bot.channels.get(logCH).send(err));
                 };
             });
         }

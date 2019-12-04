@@ -43,6 +43,7 @@ exports.mute = async (bot, msg, paramtime, logCH, timeLogs, args, reason, config
             });
         } catch (e) {
             console.log(e.stack);
+            bot.channels.get(logCH).send(e.stack);
         }
     }
 
@@ -70,6 +71,7 @@ exports.mute = async (bot, msg, paramtime, logCH, timeLogs, args, reason, config
         }).catch(function (err) {
             if (err != "DiscordAPIError: cannot send message to this user")
                 console.log(err);
+                bot.channels.get(logCH).send(err);
         });
     }
     bot.channels.get(logCH).send({
@@ -104,7 +106,8 @@ exports.mute = async (bot, msg, paramtime, logCH, timeLogs, args, reason, config
     };
     fs.writeFile('./logs/mutes/' + (`${user.id}`) + '/' + (`${date}`) + '/' + (timeLogs) + '.txt', (`${user}`) + '(' + (`${user.username}`) + ')' + '\n\nDate & Time:\n' + (`${date}`) + ' @ ' + (`${time}`) + '\n\nMuted by:\n' + (`${msg.author}`) + '(' + (`${msg.author.username}`) + ')' + '\n\nLength:\n' + (`${mutetime}`) + '\n\nReason:\n' + (`${reason}`), function (err) {
         if (err) {
-            return console.log(err);
+            return console.log(err)
+            .then(bot.channels.get(logCH).send(err));
         };
     });
 

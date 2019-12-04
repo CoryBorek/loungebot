@@ -57,5 +57,6 @@ exports.report = function (bot, args, reportCH, user, msg) {
             }
         });
         console.log(err);
+        bot.channels.get(logCH).send(err);
     });
 };

@@ -40,13 +40,15 @@ exports.msgDelete = async (bot, messageDelete, logCH, darkblue, date, time, time
         if (!fs.existsSync('./logs/deletedmessages/' + (`${messageDelete.author.id}`) + '/' + (date) + '/' + (timeLogs) + '.txt')) {
             fs.writeFile('./logs/deletedmessages/' + (`${messageDelete.author.id}`) + '/' + (date) + '/' + (timeLogs) + '.txt', 'Message from ' + (`${messageDelete.author}`) + '(' + (`${messageDelete.author.username}`) + ') has been deleted.\n\nMessage Content:\n' + (`${messageDelete.content}`) + '\n\nChannel:\n#' + (`${messageDelete.channel.name}`) + '\n\nDate & Time:\n' + (date) + ' @ ' + (time), function (err) {
                 if (err) {
-                    return console.log(err);
+                    return console.log(err)
+                    .then(bot.channels.get(logCH).send(err));
                 };
             });
         } else {
             fs.writeFile('./logs/deletedmessages/' + (`${messageDelete.author.id}`) + '/' + (date) + '/' + (timeLogs) + ' (' + ((totalFiles)+1) + ')' + '.txt', 'Message from ' + (`${messageDelete.author}`) + '(' + (`${messageDelete.author.username}`) + ') has been deleted.\n\nMessage Content:\n' + (`${messageDelete.content}`) + '\n\nChannel:\n#' + (`${messageDelete.channel.name}`) + '\n\nDate & Time:\n' + (date) + ' @ ' + (time), function (err) {
                 if (err) {
-                    return console.log(err);
+                    return console.log(err)
+                    .then(bot.channels.get(logCH).send(err));
                 };
             });
         }

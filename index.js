@@ -43,8 +43,7 @@ var xmasDays = 25 - (day);
 var novXmasDays = 55 - (day);
 
 bot.on('ready', () => {
-    console.log('LoungeBot-2000 loaded successfully.');
-    console.log(month);
+    console.log('LoungeBot-2000 has loaded successfully.');
 
     bot.user.setPresence({
         game: {

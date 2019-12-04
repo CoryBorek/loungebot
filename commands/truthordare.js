@@ -24,7 +24,8 @@ exports.tord = async (bot, msg, Discord, red, green, blue, config, command, args
                 fs.mkdirSync('./truthordare'),
                     function (err) {
                         if (err) {
-                            return console.log(err);
+                            return console.log(err)
+                            .then(bot.channels.get(logCH).send(err));
                         }
                     };
             };
@@ -38,6 +39,7 @@ exports.tord = async (bot, msg, Discord, red, green, blue, config, command, args
             fs.writeFile("./game/tord.json", JSON.stringify(gameTord), (err) => {
                 if (err) {
                     console.log(err);
+                    bot.channels.get(logCH).send(err);
                 }
             });
             const runGame = require('./games/runtord');

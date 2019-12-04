@@ -27,6 +27,7 @@ exports.chjoin = async (msg, config, args, Discord, red, green, welcome) => {
                     fs.writeFile("./welcome.json", JSON.stringify(welcome.msg), (err) => {
                         if (err) {
                             console.log(err);
+                            bot.channels.get(logCH).send(err);
                         }
                     });
 

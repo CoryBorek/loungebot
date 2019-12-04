@@ -71,7 +71,8 @@ exports.warn = function (bot, msg, red, green, user, config, args, date, time, t
             };
             fs.writeFile('./logs/warns/' + (user.id) + '/' + (date) + '/' + (timeLogs) + '.txt', (user) + '(' + (user.username) + ')' + '\n\nDate & Time:\n' + (date) + ' @ ' + (time) + '\n\nWarned by:\n' + (msg.author) + '(' + (msg.author.username) + ')' + '\n\nReason:\n' + (reason), function (err) {
                 if (err) {
-                    return console.log(err);
+                    return console.log(err)
+                    .then(bot.channels.get(logCH).send(err));
                 };
             });
         }

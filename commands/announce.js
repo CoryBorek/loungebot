@@ -84,6 +84,7 @@ exports.announce = function (bot, msg, args, announceCH, logCH, config) {
                     }
                 });
                 console.log(err);
+                bot.channels.get(logCH).send(err);
             })
         } else {
             msg.channel.send({

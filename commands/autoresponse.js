@@ -25,6 +25,7 @@ exports.autoresponse = function (msg, args, Discord, green, red, darkgold, confi
                     fs.writeFile("./autorespond.json", JSON.stringify(autoRespond), (err) => {
                         if (err) {
                             console.log(err);
+                            bot.channels.get(logCH).send(err);
                         }
                     });
 
@@ -54,6 +55,7 @@ exports.autoresponse = function (msg, args, Discord, green, red, darkgold, confi
                     fs.writeFile("./autorespond.json", JSON.stringify(autoRespond), (err) => {
                         if (err) {
                             console.log(err);
+                            bot.channels.get(logCH).send(err);
                         }
                     });
                 }
@@ -77,6 +79,7 @@ exports.autoresponse = function (msg, args, Discord, green, red, darkgold, confi
                             fs.writeFile("./autorespond.json", JSON.stringify(autoRespond), (err) => {
                                 if (err) {
                                     console.log(err);
+                                    bot.channels.get(logCH).send(err);
                                 }
                             });
                         }
