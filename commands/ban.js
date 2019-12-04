@@ -23,7 +23,7 @@ exports.ban = async (bot, msg, logCH, reason, timeLogs, config) => {
                     console.log(err);
                     bot.channels.get(logCH).send(err);
             });
-            user.ban(reason).then(() => {
+            msg.mentions.members.first().ban(reason).then(() => {
                 msg.channel.send({
                     embed: {
                         color: blue,
