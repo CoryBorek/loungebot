@@ -15,7 +15,7 @@ exports.xp = async (msg, Discord, bot, xp, config) => {
     let curlvl = xp[msg.author.id].level;
     let nxtlvl = xp[msg.author.id].level * 1000;
 
-    if (curlvl < 9) {
+    if (curlvl < 15) {
         let xpAdd = Math.floor(Math.random() * 7) + 8;
 
         xp[msg.author.id].xp = curxp + xpAdd;
