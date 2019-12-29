@@ -46,8 +46,8 @@ bot.on('ready', () => {
 
     bot.user.setPresence({
         game: {
-            name: ((xmasDays) + " Days until Christmas!"),
-            type: "WATCHING"
+            name: ("LoungeBot-2000 activated! Version: " + (config.version)),
+            type: "PLAYING"
         },
         status: 'online'
     });
@@ -106,11 +106,11 @@ bot.on('ready', () => {
         console.log('"ships" directory created.');
     };
 });
-let status = ["James -\n- " + (xmasDays) + " Days until Christmas!", "Greys Anatomy -\n- " + (xmasDays) + " Days until Christmas!", "HTGAWM -\n- " + (xmasDays) + " Days until Christmas!", "Emergence -\n- " + (xmasDays) + " Days until Christmas!", "Bot Development -\n- " + (xmasDays) + " Days until Christmas!", "Jishy UwU -\n- " + (xmasDays) + " Days until Christmas!", "Cute Guys -\n- " + (xmasDays) + " Days until Christmas!", "Viola Davis -\n- " + (xmasDays) + " Days until Christmas!", "Area 51 -\n- " + (xmasDays) + " Days until Christmas!", "and i oop -\n- " + (xmasDays) + " Days until Christmas!", "The world -\n- " + (xmasDays) + " Days until Christmas!", "Minecraft Survival -\n- " + (xmasDays) + " Days until Christmas!", "Musketqueers -\n- " + (xmasDays) + " Days until Christmas!", "Electric Avenue -\n- " + (xmasDays) + " Days until Christmas!", "Tom Holland -\n- " + (xmasDays) + " Days until Christmas!", "Connor uwu -\n- " + (xmasDays) + " Days until Christmas!", "General Chat -\n- " + (xmasDays) + " Days until Christmas!", "*beeping noises* -\n- " + (xmasDays) + " Days until Christmas!"]
+let status = ["Survival Server", "Game Night Saturdays", "@TheLoungeDisc On Twitter", "The Lounge on YouTube", "Lounge Website Coming Soon", "Community Feedback", "Content Creating", "Question of the day", "Trivia of the day", "Counting", "ABCs", "Lounge Chat", "Music Lounge", "Spoiler Channels"]
 
 setInterval(function () {
     bot.user.setActivity(status[Math.floor(Math.random() * status.length)], {
-        type: "WATCHING"
+        type: "PLAYING"
     });
 }, 10000);
 

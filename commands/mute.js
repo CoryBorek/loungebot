@@ -47,7 +47,7 @@ exports.mute = async (bot, msg, paramtime, logCH, timeLogs, args, reason, config
         }
     }
 
-    let mutetime = args[0];
+    let mutetime = args[1];
 
     await (user.addRole(`${muterole.id}`));
     msg.channel.send({
@@ -140,8 +140,4 @@ exports.mute = async (bot, msg, paramtime, logCH, timeLogs, args, reason, config
             }
         });
     }, ms(mutetime))
-}
-
-module.exports.help = {
-    name: "mute"
 }
