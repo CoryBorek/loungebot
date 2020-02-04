@@ -21,5 +21,6 @@ module.exports = {
     restart: require("./restart"),
     survival: require("./survival"),
     updates: require("./updates"),
-    eightball: require("./eightball")
+    eightball: require("./eightball"),
+    history: require("./history")
 };

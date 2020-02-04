@@ -342,7 +342,7 @@ bot.on('message', async msg => {
         msg.reply("That command is not available yet, sorry!");
     }
 
-    // Chnage join message
+    // Change join message
     if (command === "joinmsg") {
         commands.changejoinmsg.chjoin(msg, config, args, Discord, red, green, welcome);
     }
@@ -365,6 +365,11 @@ bot.on('message', async msg => {
     // Magic 8Ball
     if (command === "8ball") {
         commands.eightball.eightball(bot, Discord, msg, args, red, darkred, green, blue);
+    }
+
+    // Random history fact command
+    if (command === "history") {
+        commands.history.history(msg);
     }
 });
 
