@@ -384,7 +384,7 @@ bot.on("message", async msg => {
     };
 
     // Listening for everything basically, XP is lit
-    if ((msg.channel.type) != "dm" && (!msg.author.bot) && (!msg.content.startsWith(config.prefix) && (msg.channel.id != (config.spamCH)))) {
+    if ((msg.channel.type) != "dm" && (!msg.author.bot) && (!msg.content.startsWith(config.prefix) && (msg.channel.id != (config.botsCH)))) {
         listeners.XPGiver.xp(msg, Discord, bot, xp, config);
     };
 });
