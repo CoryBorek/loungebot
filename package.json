@@ -9,12 +9,8 @@
   "author": "Jishy",
   "license": "ISC",
   "dependencies": {
-    "canvas": "^2.6.0",
+    "canvas": "^2.6.1",
     "discord.js": "^11.5.1",
-    "ms": "^2.1.2",
-    "node.js": "0.0.0",
-    "nodejs": "0.0.0",
-    "superagent": "^5.1.0",
-    "yarn": "^1.19.1"
+    "superagent": "^5.2.1"
   }
 }

@@ -1,12 +1,12 @@
 {
-    "token": "NjI4NzMzODQzNjcwODI3MDEw.XZPgDQ.E-NBc-5V0PYoFIT_oNJZhYWTbP4",
-    "prefix": "lbd-!",
-    "guildID": "618200429775290369",
-    "logsChannel": "618255521912193024",
-    "reportsChannel": "618263697273520146",
+    "token": "NjM1NjIxNjE3NDQ3NDY5MDU2.XjOBog.ogggBTFy5kDeYQ3msfMmG9JsDEY",
+    "prefix": "lb!",
+    "guildID": "613202747235368970",
+    "logsChannel": "625422400627933224",
+    "reportsChannel": "635631673245040640",
     "announcementsChannel": "618429102944288769",
-    "botsCH": "618653562515488791",
-    "generalCH": "618200429775290371",
-    "lvlupch": "674406518288023552",
-    "staffrole": "618244106023600128"
+    "spamCH": "625189401705578497",
+    "generalCH": "625189401705578497",
+    "lvlupch": "632027466747215903",
+    "staffrole": "625810873004589057"
 }

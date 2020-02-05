@@ -367,12 +367,11 @@ bot.on('message', async msg => {
         commands.eightball.eightball(bot, Discord, msg, args, red, darkred, green, blue);
     }
 
-    // Random history fact command
+    // Random history command
     if (command === "history") {
         commands.history.history(msg);
     }
 });
-
 //
 //  Main listeners poop goes below here
 //
