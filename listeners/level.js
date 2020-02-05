@@ -35,7 +35,7 @@ exports.level = async (msg, Discord, bot, xp, config) => {
                     try {
                         lvlrole = await msg.guild.createRole({
                             name: "Lvl " + curlvl,
-                            color: "#ff5500",
+                            color: "#006933",
                             permissions: []
                         });
                     } catch (e) {

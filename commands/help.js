@@ -7,10 +7,10 @@ exports.help = function (bot, msg, args, config, Discord) {
                 .setColor(blue)
                 .setTitle("Commands Help!")
                 .setDescription("All commands you can use with *LoungeBot-2000*!")
-                .addField((bot.emojis.get("645043961387417600")) + " **General**", "`" + (config.prefix) + "help general`", true)
-                .addField((bot.emojis.get("633118752400998412")) + " **Random**", "`" + (config.prefix) + "help random`", true)
-                .addField("🎲 **Games**", "`" + (config.prefix) + "help games`", true)
-                .addField((bot.emojis.get("625509288730820611")) + " **Other**", "`" + (config.prefix) + "help other`", true)
+                .addField("**General**", "`" + (config.prefix) + "help general`", true)
+                .addField("**Random**", "`" + (config.prefix) + "help random`", true)
+                .addField("**Games**", "`" + (config.prefix) + "help games`", true)
+                .addField("**Other**", "`" + (config.prefix) + "help other`", true)
                 .setFooter("More commands comming soon!", (bot.user.avatarURL));
             msg.channel.send(newHelp);
             break;
