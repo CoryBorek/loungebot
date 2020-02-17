@@ -1,4 +1,6 @@
 The official bot for The Lounge Discord server!
 
 
-https://discord.gg/2n4gAVe
+The tokens you may find in this code are no longer in use, so don't even think about it.
+
+https://discord.gg/9kcguXh
